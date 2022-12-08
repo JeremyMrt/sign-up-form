@@ -19,7 +19,7 @@
 :root {
   --color-font-titles: #ffbf80;
   --color-bg-form: #f3f6fb;
-  --color-text-light: #9aa5b5;
+  --color-text-light: #9aa5b5c9;
   --color-text-dark: rgb(0, 0, 0);
 }
 
@@ -41,17 +41,18 @@ body {
   height: calc(100vh);
   width: calc(100vw - 20%);
   margin: 0 auto;
-  background-image: url(images/hiker.jpg);
-  background-size: 50%;
+  background-image: url(images/background.jpg);
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: bottom 35% right 1%;
+  background-position: bottom 0% left 180%;
 }
 
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 100px;
+  height: 100vh;
 }
 
 .image {
@@ -142,12 +143,19 @@ h1 {
   }
 }
 
+h2,
+h1,
+.log-in-cta {
+  background-color: white;
+  padding: 15px 15px 15px 0px;
+  border-radius: 10px;
+}
+
 h2 {
   padding-left: 3px;
   color: var(--color-text-light);
   text-transform: uppercase;
   font-size: 1.1rem;
-  opacity: 0.8;
   margin-top: 40px;
 }
 
@@ -156,7 +164,6 @@ h2 {
   color: var(--color-text-light);
   margin-bottom: 40px;
   font-size: 1.1rem;
-  opacity: 0.8;
 }
 
 .log-in-cta > a {
@@ -224,7 +231,7 @@ input[type="password"] {
   appearance: none;
   outline: none;
   border: none;
-  width: 220px;
+  width: 260px;
   height: 25px;
   background-color: calc(var(--color-bg-form) - var(--color-bg-form));
   font-weight: bolder;
@@ -254,12 +261,27 @@ form div:focus-within {
   filter: brightness(110%);
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1380px) {
+  nav ul a {
+    color: var(--color-font-titles);
+    opacity: 1;
+    background-color: white;
+    border-radius: 20px;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
   body {
-    background-image: none;
+    background-image: url("");
   }
   .container {
     align-self: center;
+  }
+  nav ul a {
+    text-decoration: none;
+    color: var(--color-text-light);
+    opacity: 0.5;
+    padding: 8px 20px;
   }
 }
 
