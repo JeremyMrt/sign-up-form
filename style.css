@@ -17,7 +17,7 @@
 }
 
 :root {
-  --color-font-titles: #ffbf80;
+  --color-font-titles: #ffc873;
   --color-bg-form: #f3f6fb;
   --color-text-light: #9aa5b5c9;
   --color-text-dark: rgb(0, 0, 0);
@@ -68,7 +68,7 @@ body {
 }
 
 .content {
-  width: 600px;
+  /* width: 600px; */
   display: flex;
   flex-direction: column;
   margin-top: 50px;
@@ -78,7 +78,6 @@ nav ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   list-style-type: none;
   gap: 4.5rem;
   font-family: "Gilroy-bold", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -106,6 +105,8 @@ nav ul a:hover {
   position: relative;
   text-transform: uppercase;
   border-top: 5px solid var(--color-font-titles);
+  border-radius: 80%;
+  padding-top: 5px;
 }
 
 .logo::before {
@@ -122,8 +123,6 @@ h1 {
   font-family: "Gilroy-bold", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 300;
   font-size: 3.5rem;
-  margin-bottom: -15px;
-  margin-top: -20px;
 }
 
 .txt-rotate > .wrap {
@@ -259,12 +258,7 @@ form div:focus-within {
   filter: brightness(110%);
 }
 
-@media only screen and (max-width: 600px) {
-  .content {
-    align-self: flex-start;
-    margin-left: 15px;
-  }
-
+@media only screen and (max-width: 680px) {
   .image-content {
     display: none;
   }
@@ -278,20 +272,23 @@ form div:focus-within {
     align-self: center;
   }
 
-  .content {
+  .container {
     width: auto;
     margin-top: 10px;
   }
 
+  .content {
+    align-self: flex-start;
+    margin-left: 10px;
+  }
+
   h1 {
     width: 300px;
+    margin-top: -5px;
+    margin-bottom: 5px;
   }
 
   .log-in-cta {
     margin-bottom: 0;
-  }
-
-  .image {
-    display: none;
   }
 }
