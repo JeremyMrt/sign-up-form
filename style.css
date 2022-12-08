@@ -68,10 +68,14 @@ body {
 }
 
 .content {
-  /* width: 600px; */
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+}
+
+strong {
+  color: var(--color-font-titles);
+  font-weight: bolder;
 }
 
 nav ul {
@@ -104,9 +108,9 @@ nav ul a:hover {
   color: var(--color-font-titles);
   position: relative;
   text-transform: uppercase;
-  border-top: 5px solid var(--color-font-titles);
+  /* border-top: 5px solid var(--color-font-titles);
   border-radius: 80%;
-  padding-top: 5px;
+  padding-top: 5px; */
 }
 
 .logo::before {
