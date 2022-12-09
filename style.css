@@ -22,6 +22,7 @@
   --color-text-light: #9aa5b5c9;
   --color-text-dark: rgb(0, 0, 0);
   --color-error: #ff7140;
+  --color-validation: #89aeae;
 }
 
 *,
@@ -242,6 +243,7 @@ h2 {
   border-radius: 10px;
   font-size: 0.9rem;
   color: var(--color-text-light);
+  height: 70px;
 }
 
 input[type="text"],
@@ -251,7 +253,7 @@ input[type="password"] {
   outline: none;
   border: none;
   width: 190px;
-  height: 25px;
+  height: 30px;
   background-color: calc(var(--color-bg-form) - var(--color-bg-form));
   font-weight: bolder;
   font-size: 1rem;
@@ -265,8 +267,41 @@ input[type="password"] {
   outline: 2px solid var(--color-font-titles);
 }
 
-input[type="password"]:invalid ~ label {
+input[type="password"]:invalid ~ label,
+input[type="email"]:invalid ~ label {
   color: var(--color-error);
+  font-weight: bolder;
+}
+
+input[type="password"]:not(:focus) ~ label,
+input[type="email"]:not(:focus) ~ label {
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+input[type="password"]:valid ~ label,
+input[type="email"]:valid ~ label {
+  color: var(--color-validation);
+  font-weight: bolder;
+}
+
+/* Replacing labels for pwd and email */
+
+.password,
+.e-mail {
+  position: relative;
+}
+
+.password label,
+.e-mail label {
+  position: absolute;
+  top: 10px;
+}
+
+.password input,
+.e-mail input {
+  position: absolute;
+  bottom: 10px;
 }
 
 .req {
