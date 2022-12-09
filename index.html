@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aurora - Inscription</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
   </head>
   <body>
     <div class="page-content">
@@ -37,35 +37,50 @@
           <section class="form-container">
             <form action="" method="post" class="sign-up-form">
               <div class="first-name">
-                <label for="first-name">Prénom</label>
+                <label for="first-name"
+                  >Prénom <span class="req">*</span></label
+                >
                 <input
                   type="text"
                   id="first-name"
                   name="first-name"
                   placeholder="Jean"
+                  required
+                  title="Qui êtes-vous ?"
                 />
               </div>
               <div class="last-name">
-                <label for="last-name">Nom</label>
+                <label for="last-name">Nom <span class="req">*</span></label>
                 <input
                   type="text"
                   id="last-name"
                   name="last-name"
                   placeholder="Dujardin"
+                  required
+                  title="Dites-nous en plus"
                 />
               </div>
               <div class="e-mail">
-                <label for="e-mail">E-mail</label>
+                <label for="e-mail">E-mail <span class="req">*</span></label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   placeholder="jean@dujmail.com"
+                  required
+                  title="Nous n'abuserons pas des spams, promis."
                 />
               </div>
               <div class="password">
-                <label for="pwd">Mot de passe</label>
-                <input type="password" id="pwd" name="pwd" />
+                <input
+                  type="password"
+                  id="pwd"
+                  name="pwd"
+                  required
+                  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                  title="Au moins 1 majuscule et 1 chiffre, sans espace, bien sûr"
+                />
+                <label for="pwd">Mot de passe <span class="req">*</span></label>
               </div>
               <div class="cta-account">
                 <button>Créer un compte</button>
