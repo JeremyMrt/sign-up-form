@@ -204,7 +204,7 @@ h2 {
     "firstName lastName"
     "email email"
     "password password"
-    "button1 button2";
+    ". button2";
   gap: 0.9rem;
   width: 100%;
 }
@@ -227,7 +227,6 @@ h2 {
 
 .cta-account {
   grid-area: button2;
-  text-align: right;
 }
 
 .first-name,
