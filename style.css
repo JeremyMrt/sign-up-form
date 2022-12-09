@@ -165,11 +165,8 @@ h1 {
 }
 
 h2,
-h1,
 .log-in-cta {
-  background-color: white;
   padding: 15px 15px 15px 0px;
-  border-radius: 10px;
   line-height: 1.4rem;
 }
 
