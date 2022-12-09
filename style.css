@@ -23,7 +23,9 @@
   --color-text-dark: rgb(0, 0, 0);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -41,10 +43,6 @@ body {
   height: calc(100vh);
   width: calc(100vw - 20%);
   margin: 0 auto;
-  /* background-image: url(images/background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top 0px left 0px; */
 }
 
 .page-content {
@@ -58,13 +56,33 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right center;
-  width: 65vw;
+  width: 60vw;
+  border-radius: 40px;
+  box-shadow: 0px 0px 50px var(--color-text-light);
+  height: calc(100vh - 5%);
+  justify-self: center;
+  align-self: center;
 }
 .container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  width: auto;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.banner img {
+  margin-top: 20px;
+  width: 80%;
+  height: auto;
+  border-radius: 40px;
+  box-shadow: 0px 0px 50px var(--color-text-light);
+  opacity: 0.9;
 }
 
 .content {
@@ -89,14 +107,14 @@ nav ul {
   font-size: 1.2rem;
 }
 
-nav ul a {
+nav ul a:not(.logo) {
   text-decoration: none;
   color: var(--color-text-light);
   opacity: 0.5;
   padding: 8px 20px;
 }
 
-nav ul a:hover {
+nav ul a:hover:not(.logo) {
   color: var(--color-font-titles);
   opacity: 1;
   background-color: var(--color-font-titles);
@@ -105,12 +123,10 @@ nav ul a:hover {
 }
 
 .logo {
+  text-decoration: none;
   color: var(--color-font-titles);
   position: relative;
   text-transform: uppercase;
-  /* border-top: 5px solid var(--color-font-titles);
-  border-radius: 80%;
-  padding-top: 5px; */
 }
 
 .logo::before {
@@ -126,7 +142,9 @@ h1 {
   color: var(--color-text-dark);
   font-family: "Gilroy-bold", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 300;
-  font-size: 3.5rem;
+  font-size: 3.2rem;
+  vertical-align: middle;
+  margin-top: -10px;
 }
 
 .txt-rotate > .wrap {
@@ -157,7 +175,6 @@ h2 {
   color: var(--color-text-light);
   text-transform: uppercase;
   font-size: 1.1rem;
-  margin-top: 20px;
 }
 
 .log-in-cta {
@@ -232,7 +249,7 @@ input[type="password"] {
   appearance: none;
   outline: none;
   border: none;
-  width: 260px;
+  width: 190px;
   height: 25px;
   background-color: calc(var(--color-bg-form) - var(--color-bg-form));
   font-weight: bolder;
@@ -263,9 +280,35 @@ form div:focus-within {
 }
 
 @media only screen and (max-width: 680px) {
+  body {
+    overflow: auto;
+    width: 100vw;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .banner {
+    display: flex;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  nav ul {
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .page-content {
+    align-self: center;
+  }
+
   .image-content {
     display: none;
   }
+
   .sign-up-form {
     display: flex;
     flex-direction: column;
@@ -277,19 +320,25 @@ form div:focus-within {
   }
 
   .container {
-    width: auto;
+    align-self: start;
     margin-top: 10px;
   }
 
   .content {
-    align-self: flex-start;
-    margin-left: 10px;
+    align-self: center;
+    justify-self: center;
   }
 
   h1 {
-    width: 300px;
-    margin-top: -5px;
-    margin-bottom: 5px;
+    width: fit-content;
+    margin-top: -10px;
+    margin-bottom: -5px;
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 0.9rem;
+    margin-top: -30px;
   }
 
   .log-in-cta {
