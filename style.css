@@ -341,6 +341,16 @@ input[type="email"]:valid {
   filter: brightness(110%);
 }
 
+.image-content p {
+  position: fixed;
+  bottom: 5%;
+  right: 0;
+  font-size: 1rem;
+  color: white;
+  font-weight: 300;
+  writing-mode: sideways-lr;
+}
+
 @media only screen and (max-width: 680px) {
   body {
     overflow: auto;
