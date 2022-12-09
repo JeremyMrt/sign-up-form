@@ -48,7 +48,7 @@ body {
 .page-content {
   display: flex;
   flex: 1;
-  gap: 60px;
+  gap: 100px;
 }
 
 .image-content {
