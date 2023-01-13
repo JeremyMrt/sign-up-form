@@ -1,0 +1,401 @@
+@font-face {
+  font-family: "Josefin";
+  src: url(/fonts/JosefinSans-VariableFont_wght.ttf),
+    url(fonts/JosefinSans-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy-light";
+  src: url(/fonts/gilroy-light-webfont.woff),
+    url(fonts/gilroy-light-webfont.woff2);
+}
+
+@font-face {
+  font-family: "Gilroy-bold";
+  src: url(/fonts/gilroy-extrabold-webfont.woff),
+    url(fonts/gilroy-extrabold-webfont.woff2);
+}
+
+:root {
+  --color-font-titles: #669c8e;
+  --color-bg-form: #f3f6fb;
+  --color-text-light: #9aa5b5c9;
+  --color-text-dark: rgb(0, 0, 0);
+  --color-error: #ff7140;
+  --color-validation: #89aeae;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* POSITIONING */
+
+body {
+  box-sizing: border-box;
+  font-family: "Josefin", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: calc(100vh);
+  width: calc(100vw - 20%);
+  margin: 0 auto;
+}
+
+.page-content {
+  display: flex;
+  flex: 1;
+  gap: 100px;
+}
+
+.image-content {
+  background-image: url(images/green-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 60vw;
+  border-radius: 40px;
+  box-shadow: 0px 0px 50px var(--color-text-light);
+  height: calc(100vh - 5%);
+  justify-self: center;
+  align-self: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+strong {
+  color: var(--color-font-titles);
+  font-weight: bolder;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  gap: 4.8rem;
+  font-family: "Gilroy-bold", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 30px;
+  font-size: 1.2rem;
+}
+
+nav ul a:not(.logo) {
+  text-decoration: none;
+  color: var(--color-text-light);
+  opacity: 0.5;
+  padding: 8px 20px;
+}
+
+nav ul a:hover:not(.logo) {
+  color: var(--color-font-titles);
+  opacity: 1;
+  background-color: var(--color-font-titles);
+  color: white;
+  border-radius: 20px;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--color-font-titles);
+  position: relative;
+  text-transform: uppercase;
+}
+
+.logo::before {
+  content: ".";
+  font-size: 150px;
+  margin-right: 5px;
+  position: absolute;
+  top: -123px;
+  left: -45px;
+}
+
+h1 {
+  color: var(--color-text-dark);
+  font-family: "Gilroy-bold", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 300;
+  font-size: 3.2rem;
+  vertical-align: middle;
+  margin-top: -8px;
+}
+
+.txt-rotate > .wrap {
+  border-right: 0.08em solid var(--color-font-titles);
+  animation: animated-cursor 1000ms steps(29, end) infinite;
+  padding-right: 0.08em;
+}
+
+@keyframes animated-cursor {
+  from {
+    border-right-color: var(--color-font-titles);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+h2,
+.log-in-cta {
+  padding: 15px 15px 15px 0px;
+  line-height: 1.4rem;
+}
+
+h2 {
+  padding-left: 3px;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.log-in-cta {
+  padding-left: 3px;
+  color: var(--color-text-light);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.log-in-cta > a {
+  text-decoration: none;
+  color: var(--color-font-titles);
+  opacity: 1;
+  font-weight: bolder;
+  padding: 8px 10px;
+}
+
+.log-in-cta > a:hover {
+  background-color: var(--color-font-titles);
+  color: white;
+  border-radius: 20px;
+}
+
+.sign-up-form {
+  display: grid;
+  grid-template:
+    "firstName lastName"
+    "email email"
+    "password password"
+    ". button2";
+  gap: 0.9rem;
+  width: 100%;
+}
+
+.first-name {
+  grid-area: firstName;
+}
+
+.last-name {
+  grid-area: lastName;
+}
+
+.e-mail {
+  grid-area: email;
+}
+
+.password {
+  grid-area: password;
+}
+
+.cta-account {
+  grid-area: button2;
+}
+
+.first-name,
+.last-name,
+.e-mail,
+.password {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-form);
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  height: 70px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  appearance: none;
+  outline: none;
+  border: none;
+  width: 190px;
+  height: 30px;
+  background-color: calc(var(--color-bg-form) - var(--color-bg-form));
+  font-weight: bolder;
+  font-size: 1rem;
+  color: var(--color-text-dark);
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+}
+
+.first-name:focus-within,
+.last-name:focus-within,
+.e-mail:focus-within,
+.password:focus-within {
+  outline: 2px solid var(--color-font-titles);
+}
+
+input[type="password"]:invalid ~ label,
+input[type="email"]:invalid ~ label {
+  color: var(--color-error);
+  font-weight: bolder;
+}
+
+input[type="password"]:not(:focus) ~ label,
+input[type="email"]:not(:focus) ~ label {
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+input[type="password"]:focus,
+input[type="email"]:focus {
+  background: url(images/error.png) no-repeat 90% 50%;
+  background-size: 20px;
+}
+
+input[type="password"]:valid ~ label,
+input[type="email"]:valid ~ label {
+  color: var(--color-validation);
+  font-weight: bolder;
+}
+
+input[type="password"]:valid,
+input[type="email"]:valid {
+  background: url(images/checkmark.png) no-repeat 90% 50%;
+  background-size: 20px;
+}
+
+/* Replacing labels for pwd and email */
+
+.password,
+.e-mail {
+  position: relative;
+}
+
+.password label,
+.e-mail label {
+  position: absolute;
+  top: 10px;
+}
+
+.password input,
+.e-mail input {
+  position: absolute;
+  bottom: 10px;
+}
+
+.req {
+  color: var(--color-error);
+}
+
+.cta-account button {
+  appearance: none;
+  width: 220px;
+  padding: 15px 35px;
+  border-radius: 30px;
+  border: none;
+  background-color: var(--color-font-titles);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.cta-account button:hover {
+  filter: brightness(110%);
+}
+
+.image-content p {
+  position: fixed;
+  bottom: 5%;
+  right: 0;
+  font-size: 1rem;
+  color: white;
+  font-weight: 300;
+  writing-mode: vertical-lr;
+}
+
+@media only screen and (max-width: 680px) {
+  body {
+    overflow: auto;
+    width: 100vw;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  header {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  nav ul {
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .page-content {
+    align-self: center;
+  }
+
+  .image-content {
+    display: none;
+  }
+
+  .sign-up-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.3rem;
+  }
+
+  .cta-account {
+    align-self: center;
+  }
+
+  .container {
+    align-self: start;
+    margin-top: 10px;
+  }
+
+  .content {
+    align-self: center;
+    justify-self: center;
+  }
+
+  h1 {
+    width: fit-content;
+    margin-top: -10px;
+    margin-bottom: -5px;
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 0.9rem;
+    margin-top: -30px;
+  }
+
+  .log-in-cta {
+    margin-bottom: 0;
+  }
+}
